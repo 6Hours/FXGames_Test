@@ -12,16 +12,12 @@ namespace View.Visualizators
         [SerializeField] private Image icon;
         [SerializeField] private TextMeshProUGUI valueText;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
         public override void UpdateItem(BaseItem _item)
         {
             base.UpdateItem(_item);
 
+            icon.sprite = (Item as ResourceValueItem).Model.Icon;
+            valueText.text = (Item as ResourceValueItem).Value.ToString();
         }
     }
 }

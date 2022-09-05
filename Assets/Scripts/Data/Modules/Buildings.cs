@@ -10,8 +10,7 @@ namespace Data
     {
         public BuildItem[] BuildingModels { get; private set; }
 
-        public BuildItem CurrentBuild { get; private set; }
-        public DateTime WhenStartedBuild { get; private set; }
+        public List<BuildValueItem> MapBuildings { get; private set; }
 
         public void Initialize()
         {
@@ -19,6 +18,11 @@ namespace Data
         }
 
         private void LoadModelsData()
+        {
+
+        }
+
+        private void LoadProgressData()
         {
 
         }

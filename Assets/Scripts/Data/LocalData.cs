@@ -7,17 +7,19 @@ namespace Data
 {
     public class LocalData : MonoBehaviour
     {
-        //public static Users UsersModel => usersModel;
-        //public static Chats ChatsModel => chatsModel;
+        public static Currencies Currencies { get; private set; }
+        public static Buildings Buildings { get; private set; }
 
-        //private Users usersModel = new Users();
-        //private Chats chatsModel = new Chats();
+        private Currencies currenciesModel = new Currencies();
+        private Buildings buildingsModel = new Buildings();
 
-        //public override void Awake()
-        //{
-        //    base.Awake();
-        //    usersModel.Initialize();
-        //    chatsModel.Initialize();
-        //}
+        public void Awake()
+        {
+            Currencies = currenciesModel;
+            Buildings = buildingsModel;
+
+            currenciesModel.Initialize();
+            buildingsModel.Initialize();
+        }
     }
 }

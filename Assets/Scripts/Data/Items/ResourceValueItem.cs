@@ -8,7 +8,7 @@ namespace Data.Items
     {
         public long Id { get; private set; }
 
-        public ResourceItem Resource { get; private set; }
+        public ResourceItem Model { get; private set; }
 
         private int count = 0;
 
@@ -25,7 +25,7 @@ namespace Data.Items
         public ResourceValueItem(long _id, ResourceItem _resource, int _count)
         {
             Id = _id;
-            Resource = _resource;
+            Model = _resource;
             count = _count;
         }
     }
