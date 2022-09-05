@@ -5,8 +5,9 @@ namespace View.Visualizators
 {
     public abstract class BaseItemVisualizator : MonoBehaviour
     {
+        public System.Action<BaseItemVisualizator> OnValueChanged;
         private BaseItem item;
-
+        
         public virtual void UpdateItem(BaseItem _item)
         {
             if (item != null) item.OnChangeItem -= () => UpdateItem(item);
