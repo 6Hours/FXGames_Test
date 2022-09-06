@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5785039454265195772}
   - component: {fileID: 5785039454265195773}
   m_Layer: 0
-  m_Name: 'Gas prod - Building '
+  m_Name: Gas prod - Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

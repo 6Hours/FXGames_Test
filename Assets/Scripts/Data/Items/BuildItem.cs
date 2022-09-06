@@ -19,14 +19,17 @@ namespace Data.Items
 
         public GameObject Prefab { get; private set; }
 
+        public int[] Args { get; private set; }
+
         //dont set a description because it useless for test demonstration
-        public BuildItem(long _id, string _name, ResourceValueItem[] _cost, float _buildTime, string prefabAdress)
+        public BuildItem(long _id, string _name, ResourceValueItem[] _cost, float _buildTime, string _prefabAdress, int[] _args)
         {
             Id = _id;
             Name = _name;
             BuildCost = _cost;
             BuildTime = _buildTime;
-            Prefab = Resources.Load<GameObject>("Prefabs/" + prefabAdress);
+            Prefab = Resources.Load<GameObject>("Prefabs/" + _prefabAdress);
+            Args = _args;
         }
 
         public bool IsCanBuild

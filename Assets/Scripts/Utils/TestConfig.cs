@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestConfig : MonoBehaviour
+public class TestConfig : Singleton<TestConfig>
 {
     [System.Serializable]
     public struct TempResourceModel
@@ -16,7 +16,6 @@ public class TestConfig : MonoBehaviour
     [System.Serializable]
     public struct TempResourceItem
     {
-        public long Id;
         public int ModelId;
         public long Value;
     }
@@ -29,26 +28,16 @@ public class TestConfig : MonoBehaviour
         public TempResourceItem[] Cost;
         public float BuildTime;
         public string PrefabAdress;
-    }
-
-    [System.Serializable]
-    public struct TempBuildingItem
-    {
-        public long Id;
-        public int ModelId;
-        public bool IsBuilded;
-        //havent value of LastUpdated because its a test and we havent progress yet
+        public int[] Args;
     }
 
     public TempResourceModel[] tempResourceModels;
     public TempResourceItem[] tempResourceItems;
     public TempBuildingModel[] tempBuildingModels;
-    public TempBuildingItem[] tempBuildingItems;
 
     public Action<TempResourceModel[]> OnResourceModelsReceive;
     public Action<TempResourceItem[]> OnResourceItemsReceive;
     public Action<TempBuildingModel[]> OnBuildingModelsReceive;
-    public Action<TempBuildingItem[]> OnBuildingItemsReceive;
 
     IEnumerator Start()
     {
@@ -57,8 +46,6 @@ public class TestConfig : MonoBehaviour
         OnResourceItemsReceive?.Invoke(tempResourceItems);
         yield return null;
         OnBuildingModelsReceive?.Invoke(tempBuildingModels);
-        yield return null;
-        OnBuildingItemsReceive?.Invoke(tempBuildingItems);
     }
 
 }

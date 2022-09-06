@@ -6,13 +6,11 @@ namespace Data.Items
 {
     public class ResourceValueItem : BaseItem
     {
-        public long Id { get; private set; }
-
         public ResourceItem Model { get; private set; }
 
-        private int count = 0;
+        private long count = 0;
 
-        public int Value
+        public long Value
         {
             get { return count; }
             set
@@ -22,9 +20,8 @@ namespace Data.Items
             }
         }
 
-        public ResourceValueItem(long _id, ResourceItem _resource, int _count)
+        public ResourceValueItem(ResourceItem _resource, long _count)
         {
-            Id = _id;
             Model = _resource;
             count = _count;
         }

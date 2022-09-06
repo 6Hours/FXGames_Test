@@ -11,7 +11,7 @@ namespace UI
     public class GameController : MonoBehaviour
     {
         [SerializeField] private ShopScreen shopScreen;
-        [SerializeField] private Button backButton;
+        [SerializeField] private Button shopButton;
 
         // Start is called before the first frame update
         void Start()
@@ -20,19 +20,19 @@ namespace UI
 
             shopScreen.OnItemClick += OnBuildClick;
 
-            backButton.onClick.AddListener(BackToMain);
-            backButton.gameObject.SetActive(false);
+            shopButton.onClick.AddListener(BackToMain);
+            shopButton.gameObject.SetActive(false);
         }
 
         private void OnBuildClick(BuildItem item)
         {
             shopScreen.Hide();
-            backButton.gameObject.SetActive(true);
+            shopButton.gameObject.SetActive(true);
         }
 
         private void BackToMain()
         {
-            backButton.gameObject.SetActive(false);
+            shopButton.gameObject.SetActive(false);
 
         }
     }

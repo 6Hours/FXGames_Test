@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6266914731219151605}
   - component: {fileID: 6266914731219151604}
   m_Layer: 0
-  m_Name: 'Mineral prod - Building '
+  m_Name: Mineral prod - Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
