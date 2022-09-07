@@ -20,29 +20,34 @@ namespace UI
         private MapController mapController;
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
+            mapController = FindObjectOfType<MapController>();
+            mapController.OnBuildingFinished += 
+
+            FindObjectOfType<TestConfig>().OnInitDataSuccess += Initialize;
+
             shopScreen.Initialize();
             shopScreen.OnItemClick += OnBuildClick;
 
-            shopButton.onClick.AddListener(BackToMain);
-            shopButton.gameObject.SetActive(false);
+            shopButton.onClick.AddListener(OnShopClick);
+        }
 
+        private void Initialize()
+        {
             headerResourceStorages.SetItemsGroup(LocalData.Currencies.StorageResourceValues);
-
-            mapController = FindObjectOfType<MapController>();
         }
 
         private void OnBuildClick(BuildItem item)
         {
+            mapController.SetBuildState(item);
             shopScreen.Hide();
-            shopButton.gameObject.SetActive(true);
         }
 
-        private void BackToMain()
+        private void OnShopClick()
         {
-            shopButton.gameObject.SetActive(false);
-
+            mapController.SetNormalState();
+            shopScreen.Show();
         }
     }
 }

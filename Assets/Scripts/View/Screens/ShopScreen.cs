@@ -18,6 +18,8 @@ namespace View.Screens
         public override void Initialize()
         {
             shopList.OnValueChanged += (vis) => OnClick(vis.Item as BuildItem);
+
+            closeButton.onClick.AddListener(OnBack);
         }
 
         public override void Show()
@@ -34,6 +36,11 @@ namespace View.Screens
         private void OnClick(BuildItem _item)
         {
             OnItemClick?.Invoke(_item);
+        }
+
+        private void OnBack()
+        {
+            Hide();
         }
     }
 }

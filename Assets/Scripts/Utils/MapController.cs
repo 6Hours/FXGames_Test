@@ -31,7 +31,7 @@ namespace Utils
             currentBuild = item;
         }
 
-        private void SetNormalState()
+        public void SetNormalState()
         {
             meshRenderer.material = normalStateMaterial;
             currentBuild = null;
@@ -41,18 +41,26 @@ namespace Utils
         {
             if(currentBuild != null)
             {
-                var tempItem = new BuildValueItem(LocalData.Buildings.MapBuildings.Count + 1,
-                    currentBuild, false, DateTime.UtcNow);
+                //get position of mouse click
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-                foreach(var res in tempItem.Model.BuildCost)
-                    LocalData.Currencies.StorageResourceValues.First((stor) => stor.Model.Id == res.Model.Id).AddResource(res.Count);
+                if (Physics.Raycast(ray, out RaycastHit hitInfo))
+                {
+                    var tempItem = new BuildValueItem(LocalData.Buildings.MapBuildings.Count + 1,
+                        currentBuild, false, DateTime.UtcNow);
 
-                LocalData.Buildings.MapBuildings.Add(tempItem);
+                    foreach (var res in tempItem.Model.BuildCost)
+                        LocalData.Currencies.StorageResourceValues.First((stor) => stor.Model.Id == res.Model.Id).AddResource(-res.Count);
 
-                Instantiate(tempItem.Model.Prefab,
-                    Camera.main.ScreenToWorldPoint(Input.mousePosition), 
-                    Quaternion.identity, 
-                    transform).GetComponent<BuildValueItemVisualizator>().UpdateItem(tempItem);
+                    LocalData.Buildings.MapBuildings.Add(tempItem);
+
+                    Instantiate(tempItem.Model.Prefab,
+                        new Vector3(Mathf.Floor(hitInfo.point.x), Mathf.Floor(hitInfo.point.y), Mathf.Floor(hitInfo.point.z)),
+                        Quaternion.identity,
+                        null).GetComponent<BuildValueItemVisualizator>().UpdateItem(tempItem);
+
+                    SetNormalState();
+                }
             }
         }
     }

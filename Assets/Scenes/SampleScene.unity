@@ -175,7 +175,7 @@ MonoBehaviour:
       Value: 100
       Storage: 0
     BuildTime: 10
-    PrefabAdress: 'Gas prod - Building '
+    PrefabAdress: MineralProd-Building
     Args: 030000000100000014000000
   - Id: 2
     Name: "\u0425\u0440\u0430\u043D\u0438\u043B\u0438\u0449\u0435 \u043C\u0438\u043D\u0435\u0440\u0430\u043B\u043E\u0432"
@@ -184,7 +184,7 @@ MonoBehaviour:
       Value: 150
       Storage: 0
     BuildTime: 20
-    PrefabAdress: Gas storage - Building
+    PrefabAdress: MineralStorage-Building
     Args: 01000000c8000000
   - Id: 3
     Name: "\u0428\u0430\u0445\u0442\u0430 \u0434\u043E\u0431\u044B\u0447\u0438 \u0433\u0430\u0437\u0430"
@@ -193,7 +193,7 @@ MonoBehaviour:
       Value: 125
       Storage: 0
     BuildTime: 15
-    PrefabAdress: Mineral prod - Building
+    PrefabAdress: GasProd-Building
     Args: 0a000000020000000a000000
   - Id: 4
     Name: "\u0425\u0440\u0430\u043D\u0438\u043B\u0438\u0449\u0435 \u0433\u0430\u0437\u0430"
@@ -202,7 +202,7 @@ MonoBehaviour:
       Value: 150
       Storage: 0
     BuildTime: 25
-    PrefabAdress: Mineral storage - Building
+    PrefabAdress: GasStorage-Building
     Args: 020000002c010000
 --- !u!4 &32952058
 Transform:
@@ -951,8 +951,8 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
+  m_Spacing: 50
+  m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
@@ -2161,4 +2161,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2028954300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2028954301}
+  m_Layer: 0
+  m_Name: ___________________________
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2028954301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028954300}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1275.1329, y: 857.78595, z: -77.548645}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

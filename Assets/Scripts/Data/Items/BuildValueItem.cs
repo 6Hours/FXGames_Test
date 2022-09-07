@@ -40,8 +40,8 @@ namespace Data.Items
         {
             Id = _id;
             Model = _model;
-            isBuilded = _isBuilded? _isBuilded : lastUpdate.AddSeconds(Model.BuildTime) < DateTime.Now;
             LastUpdate = lastUpdate;
+            isBuilded = _isBuilded? _isBuilded : lastUpdate.AddSeconds(Model.BuildTime) < DateTime.UtcNow;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace View
         [SerializeField] private BaseItemVisualizator prefab;
 
         public System.Action<BaseItemVisualizator> OnValueChanged;
-        public List<BaseItemVisualizator> Visualizators { get; private set; }
+        public List<BaseItemVisualizator> Visualizators { get; private set; } = new List<BaseItemVisualizator>();
 
         public void SetItemsGroup(BaseItem[] _items)
         {

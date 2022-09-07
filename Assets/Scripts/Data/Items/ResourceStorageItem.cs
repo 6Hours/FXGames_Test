@@ -7,6 +7,7 @@ namespace Data.Items.Resources
     public class ResourceStorageItem : BaseItem
     {
         public ResourceItem Model { get ; private set; }
+        
         public long Count { get; private set; }
 
         private long storageSpace = 150;
@@ -29,9 +30,12 @@ namespace Data.Items.Resources
 
         public bool AddResource(long value)
         {
-            if (Count + value > storageSpace) return false;
-            if (Count - value < 0) return false;
+            if (Count > storageSpace) return false;
+            if (Count + value < 0) return false;
             Count += value;
+            Count = Count > storageSpace ? storageSpace : Count;
+
+            OnChangeItem?.Invoke();
             return true;
         }
     }

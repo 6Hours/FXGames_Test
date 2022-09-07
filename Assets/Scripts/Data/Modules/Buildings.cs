@@ -38,6 +38,8 @@ namespace Data
                     _models[i].PrefabAdress,
                     _models[i].Args);
             }
+
+            MapBuildings = new List<BuildValueItem>();
         }
 
         private void LoadProgressData()

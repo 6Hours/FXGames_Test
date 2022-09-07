@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2790173477881028591}
   - component: {fileID: 2552939540347721824}
   m_Layer: 0
-  m_Name: Gas storage - Building
+  m_Name: GasStorage-Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -28,7 +28,9 @@ namespace View.Visualizators.OnMap
 
             if (tempItem.IsBuilded)
             {
-                Invoke("OnStateChange", Mathf.Max(0f,
+                CancelInvoke(); //suppport-costil
+
+                Invoke("CheckState", Mathf.Max(0f,
                     (float)(tempItem.LastUpdate.AddSeconds(tempItem.Model.Args[0]) - System.DateTime.UtcNow).TotalSeconds));
             }
         }

@@ -21,7 +21,7 @@ namespace View.Visualizators.OnMap
 
             if(!tempItem.IsBuilded)
             {
-                Invoke("OnStateChange", Mathf.Max(0,
+                Invoke("CheckState", Mathf.Max(0,
                     (int)(tempItem.LastUpdate.AddSeconds(tempItem.Model.BuildTime) - System.DateTime.UtcNow).TotalSeconds));
             }
         }
@@ -32,7 +32,7 @@ namespace View.Visualizators.OnMap
             mapController.OnBuildingFinished?.Invoke();
         }
 
-        void Start()
+        private void Start()
         {
             mapController = FindObjectOfType<MapController>();
         }

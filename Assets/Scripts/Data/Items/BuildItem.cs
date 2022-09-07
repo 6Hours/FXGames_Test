@@ -37,9 +37,9 @@ namespace Data.Items
         {
             get
             {
-                return BuildCost.First((res) => 
-                    res.Count - LocalData.Currencies.StorageResourceValues.First((res2) => res2.Model.Id == res.Model.Id).Count > 0
-                ) == null && !LocalData.Buildings.MapBuildings.Any((building) => !building.IsBuilded);
+                return BuildCost.All((res) => res.Count - LocalData.Currencies.StorageResourceValues.First(
+                        (res2) => res2.Model.Id == res.Model.Id).Count <= 0) 
+                    && !LocalData.Buildings.MapBuildings.Any((building) => !building.IsBuilded);
             }
         }
     }

@@ -40,6 +40,7 @@ public class TestConfig : Singleton<TestConfig>
     public Action<TempResourceItem[]> OnResourceItemsReceive;
     public Action<TempBuildingModel[]> OnBuildingModelsReceive;
 
+    public Action OnInitDataSuccess;
     IEnumerator Start()
     {
         OnResourceModelsReceive?.Invoke(tempResourceModels);
@@ -47,6 +48,7 @@ public class TestConfig : Singleton<TestConfig>
         OnResourceItemsReceive?.Invoke(tempResourceItems);
         yield return null;
         OnBuildingModelsReceive?.Invoke(tempBuildingModels);
+        OnInitDataSuccess?.Invoke();
     }
 
 }
