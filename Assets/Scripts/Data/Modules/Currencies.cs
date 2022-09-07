@@ -1,4 +1,4 @@
-using Data.Items;
+using Data.Items.Resources;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,9 +10,7 @@ namespace Data
     {
         public ResourceItem[] ResourceModels { get; private set; }
 
-        public ResourceValueItem[] ResourceValues { get; private set; }
-
-        public ResourceValueItem[] StorageResourceValues { get; private set; }
+        public ResourceStorageItem[] StorageResourceValues { get; private set; }
 
         public void Initialize()
         {
@@ -31,12 +29,13 @@ namespace Data
 
         private void LoadValuesData(TestConfig.TempResourceItem[] _items)
         {
-            ResourceValues = new ResourceValueItem[_items.Length];
+            StorageResourceValues = new ResourceStorageItem[_items.Length];
             for (var i = 0; i < _items.Length; i++)
             {
-                ResourceValues[i] = new ResourceValueItem(
+                StorageResourceValues[i] = new ResourceStorageItem(
                     ResourceModels.First((model) => model.Id == _items[i].ModelId),
-                    _items[i].Value);
+                    _items[i].Value,
+                    _items[i].Storage);
             }
         }
     }

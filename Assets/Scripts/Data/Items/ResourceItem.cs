@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Data.Items
+namespace Data.Items.Resources
 {
     public class ResourceItem : BaseItem
     {
@@ -16,7 +16,7 @@ namespace Data.Items
         {
             Id = _id;
             Name = _name;
-            Icon = Resources.Load<Sprite>("Sprites/Resources/" + _icon);
+            Icon = UnityEngine.Resources.Load<Sprite>("Sprites/Resources/" + _icon);
         }
     }
 }

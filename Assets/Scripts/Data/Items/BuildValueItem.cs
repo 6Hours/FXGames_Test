@@ -11,7 +11,15 @@ namespace Data.Items
 
         public BuildItem Model { get; private set; }
 
-        public bool IsBuilded { get; private set; }
+        private bool isBuilded;
+        public bool IsBuilded
+        {
+            get { return isBuilded; }
+            set { 
+                isBuilded = value;
+                OnChangeItem?.Invoke();
+            }
+        }
 
         private DateTime lastUpdate;
 
@@ -28,7 +36,7 @@ namespace Data.Items
         {
             Id = _id;
             Model = _model;
-            IsBuilded = _isBuilded? _isBuilded : lastUpdate.AddSeconds(Model.BuildTime) < DateTime.Now;
+            isBuilded = _isBuilded? _isBuilded : lastUpdate.AddSeconds(Model.BuildTime) < DateTime.Now;
             LastUpdate = lastUpdate;
         }
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Data.Items.Resources;
 
 namespace Data.Items
 {
@@ -28,7 +29,7 @@ namespace Data.Items
             Name = _name;
             BuildCost = _cost;
             BuildTime = _buildTime;
-            Prefab = Resources.Load<GameObject>("Prefabs/" + _prefabAdress);
+            Prefab = UnityEngine.Resources.Load<GameObject>("Prefabs/" + _prefabAdress);
             Args = _args;
         }
 
@@ -37,8 +38,8 @@ namespace Data.Items
             get
             {
                 return BuildCost.First((res) => 
-                    res.Value - LocalData.Currencies.ResourceValues.First((res2) => res2.Model.Id == res.Model.Id).Value > 0
-                ) == null && !LocalData.Buildings.MapBuildings.Any((building) => building.IsBuilded);
+                    res.Count - LocalData.Currencies.StorageResourceValues.First((res2) => res2.Model.Id == res.Model.Id).Count > 0
+                ) == null && !LocalData.Buildings.MapBuildings.Any((building) => !building.IsBuilded);
             }
         }
     }

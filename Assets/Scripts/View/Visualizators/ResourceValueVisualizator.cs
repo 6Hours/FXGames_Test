@@ -1,9 +1,8 @@
 using Data.Items;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Data.Items.Resources;
 
 namespace View.Visualizators
 {
@@ -17,7 +16,7 @@ namespace View.Visualizators
             base.UpdateItem(_item);
 
             icon.sprite = (Item as ResourceValueItem).Model.Icon;
-            valueText.text = (Item as ResourceValueItem).Value.ToString();
+            valueText.text = (Item as ResourceValueItem).Count.ToString();
         }
     }
 }

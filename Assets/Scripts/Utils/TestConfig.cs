@@ -18,6 +18,7 @@ public class TestConfig : Singleton<TestConfig>
     {
         public int ModelId;
         public long Value;
+        public long Storage;
     }
 
     [System.Serializable]
