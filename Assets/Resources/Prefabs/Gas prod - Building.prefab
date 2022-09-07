@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5785039454265195772}
   - component: {fileID: 5785039454265195773}
+  - component: {fileID: 7672278265562121141}
   m_Layer: 0
   m_Name: Gas prod - Building
   m_TagString: Untagged
@@ -49,6 +50,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0.5, y: 0.5, z: 0.5}
+--- !u!114 &7672278265562121141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5785039454265195774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0277bc427605ca3438ea5b79d010d97d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingSupport: {fileID: 8501103503184562758}
+  resourceReadyInicator: {fileID: 5140843160115746606}
 --- !u!1 &6106155447277138017
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +75,7 @@ GameObject:
   - component: {fileID: 4029172171022886872}
   - component: {fileID: 5140843160115746606}
   m_Layer: 0
-  m_Name: Stone
+  m_Name: Icon - Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -374,6 +389,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc2064a07c820fc498d33ad4f90b5e23, type: 3}
+--- !u!1 &8501103503184562758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dc2064a07c820fc498d33ad4f90b5e23, type: 3}
+  m_PrefabInstance: {fileID: 8734895620435228439}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9129408000519655676 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dc2064a07c820fc498d33ad4f90b5e23, type: 3}

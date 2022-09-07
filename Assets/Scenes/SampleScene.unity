@@ -335,6 +335,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopScreen: {fileID: 1283352494}
   shopButton: {fileID: 726886509}
+  headerResourceStorages:
+    container: {fileID: 633247816}
+    prefab: {fileID: 3704877225145262926, guid: d282ffb6701e0c049a0182f838b9031e, type: 3}
 --- !u!1 &273223667
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,7 +682,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2fee6504c1e33bd43976fa6587bbd581, type: 2}
+  - {fileID: 2100000, guid: ba45a232ac7cc084c8b3b8bcfb2baa83, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -735,8 +738,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c501eb326db38cd4e86c6b73fc31ae83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalStateMaterial: {fileID: 0}
-  buildStateMaterial: {fileID: 0}
+  normalStateMaterial: {fileID: 2100000, guid: ba45a232ac7cc084c8b3b8bcfb2baa83, type: 2}
+  buildStateMaterial: {fileID: 2100000, guid: 2fee6504c1e33bd43976fa6587bbd581, type: 2}
 --- !u!1 &471193965
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +950,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -1870,36 +1873,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!1 &1260270682
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1260270683}
-  m_Layer: 0
-  m_Name: Build Mansger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1260270683
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260270682}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1274648904
 GameObject:
   m_ObjectHideFlags: 0

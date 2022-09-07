@@ -1,18 +1,42 @@
+using Data.Items;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
-public class BuildValueItemVisualizator : MonoBehaviour
+namespace View.Visualizators.OnMap
 {
-    // Start is called before the first frame update
-    void Start()
+    public abstract class BuildValueItemVisualizator : BaseItemVisualizator
     {
-        
-    }
+        [SerializeField] private GameObject buildingSupport; //indicator of building
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        protected MapController mapController;
+        public override void UpdateItem(BaseItem _item)
+        {
+            base.UpdateItem(_item);
+
+            var tempItem = (Item as BuildValueItem);
+
+            buildingSupport.SetActive(!tempItem.IsBuilded);
+
+            if(!tempItem.IsBuilded)
+            {
+                Invoke("OnStateChange", Mathf.Max(0,
+                    (int)(tempItem.LastUpdate.AddSeconds(tempItem.Model.BuildTime) - System.DateTime.UtcNow).TotalSeconds));
+            }
+        }
+
+        protected virtual void CheckState()
+        {
+            (Item as BuildValueItem).IsBuilded = true;
+            mapController.OnBuildingFinished?.Invoke();
+        }
+
+        void Start()
+        {
+            mapController = FindObjectOfType<MapController>();
+        }
+
+        public abstract void DestroyBuilding();
     }
 }

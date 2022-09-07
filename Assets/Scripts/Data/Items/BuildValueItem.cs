@@ -16,18 +16,22 @@ namespace Data.Items
         {
             get { return isBuilded; }
             set { 
-                isBuilded = value;
-                OnChangeItem?.Invoke();
+                if(value && value != isBuilded)
+                {
+                    isBuilded = value;
+                    lastUpdate = DateTime.UtcNow;
+                    OnChangeItem?.Invoke();
+                }
             }
         }
 
         private DateTime lastUpdate;
 
-        public DateTime LastUpdate
+        public DateTime LastUpdate // set only Datetime.UtcNow
         {
             get { return lastUpdate; }
             set { 
-                lastUpdate = value;
+                lastUpdate = value; // know that i can write DateTime.UtcNow instead value
                 OnChangeItem?.Invoke();
             }
         }

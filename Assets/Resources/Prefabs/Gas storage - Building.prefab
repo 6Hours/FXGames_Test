@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2790173477881028368}
   - component: {fileID: 2790173477881028591}
+  - component: {fileID: 2552939540347721824}
   m_Layer: 0
   m_Name: Gas storage - Building
   m_TagString: Untagged
@@ -48,6 +49,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0.5, y: 0.5, z: 0.5}
+--- !u!114 &2552939540347721824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2790173477881028369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21c2850b91b08c4fac539c568e41561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingSupport: {fileID: 2881113517908955323}
 --- !u!1001 &2790173477551245646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -295,6 +309,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc2064a07c820fc498d33ad4f90b5e23, type: 3}
+--- !u!1 &2881113517908955323 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dc2064a07c820fc498d33ad4f90b5e23, type: 3}
+  m_PrefabInstance: {fileID: 3114991943600778730}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3220097743682423297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dc2064a07c820fc498d33ad4f90b5e23, type: 3}

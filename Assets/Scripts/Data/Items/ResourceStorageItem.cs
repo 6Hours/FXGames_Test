@@ -29,8 +29,8 @@ namespace Data.Items.Resources
 
         public bool AddResource(long value)
         {
-            if (value + Count > storageSpace) return false;
-
+            if (Count + value > storageSpace) return false;
+            if (Count - value < 0) return false;
             Count += value;
             return true;
         }
