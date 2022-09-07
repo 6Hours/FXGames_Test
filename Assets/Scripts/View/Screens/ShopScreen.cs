@@ -33,6 +33,11 @@ namespace View.Screens
             base.Hide();
         }
 
+        public void UpdateList()
+        {
+            shopList.SetItemsGroup(LocalData.Buildings.BuildingModels);
+        }
+
         private void OnClick(BuildItem _item)
         {
             OnItemClick?.Invoke(_item);

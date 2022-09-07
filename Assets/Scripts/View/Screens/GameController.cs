@@ -23,7 +23,7 @@ namespace UI
         private void Start()
         {
             mapController = FindObjectOfType<MapController>();
-            mapController.OnBuildingFinished += 
+            mapController.OnBuildingFinished += OnBuildFinfished;
 
             FindObjectOfType<TestConfig>().OnInitDataSuccess += Initialize;
 
@@ -48,6 +48,11 @@ namespace UI
         {
             mapController.SetNormalState();
             shopScreen.Show();
+        }
+
+        private void OnBuildFinfished()
+        {
+            shopScreen.UpdateList();
         }
     }
 }

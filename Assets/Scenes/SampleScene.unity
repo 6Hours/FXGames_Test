@@ -1352,8 +1352,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xRange:
-    Min: 5.5
-    Max: 34.5
+    Min: 5
+    Max: 35
   zRange:
     Min: 1
     Max: 33
