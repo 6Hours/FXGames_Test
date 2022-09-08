@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Utils;
 
 namespace View.Visualizators.OnMap
 {
@@ -30,6 +31,10 @@ namespace View.Visualizators.OnMap
             {
                 CancelInvoke(); //suppport-costil
 
+                //DelayService.Instance.AddCallback(tempItem.LastUpdate.AddSeconds(tempItem.Model.Args[0]), () => {
+                //    CheckState();
+                //    return 0;
+                //});
                 Invoke("CheckState", Mathf.Max(0f,
                     (float)(tempItem.LastUpdate.AddSeconds(tempItem.Model.Args[0]) - System.DateTime.UtcNow).TotalSeconds));
             }

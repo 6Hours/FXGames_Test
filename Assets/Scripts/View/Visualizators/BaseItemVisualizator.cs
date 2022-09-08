@@ -10,6 +10,8 @@ namespace View.Visualizators
         
         public virtual void UpdateItem(BaseItem _item)
         {
+            if (_item == item) return;
+
             if (item != null) item.OnChangeItem -= () => UpdateItem(item);
             item = _item;
             item.OnChangeItem += () => UpdateItem(item);
