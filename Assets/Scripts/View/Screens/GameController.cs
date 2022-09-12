@@ -25,7 +25,7 @@ namespace UI
             mapController = FindObjectOfType<MapController>();
             mapController.OnBuildingFinished += OnBuildFinfished;
 
-            FindObjectOfType<TestConfig>().OnInitDataSuccess += Initialize;
+            TestConfig.Instance.OnInitDataSuccess += Initialize;
 
             shopScreen.Initialize();
             shopScreen.OnItemClick += OnBuildClick;
